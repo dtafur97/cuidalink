@@ -1,0 +1,8 @@
+---
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+<picture class:list={['product-render', {compact}]}>
+  <source srcset="/images/cuidalink-producto-concepto.webp" type="image/webp" />
+  <img src="/images/cuidalink-producto-concepto.png" width="1536" height="1024" alt="Visualización conceptual de CuidaLink: módulo rectangular blanco con toma frontal e indicador verde" fetchpriority="high" decoding="async" />
+</picture>

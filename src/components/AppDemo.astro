@@ -1,0 +1,29 @@
+---
+import Icon from './Icon.astro';
+const screens = [
+  { key: 'home', icon: 'home' as const, title: 'Tu hogar, de un vistazo', detail: 'Alertas, dispositivos y vigencia de los datos.' },
+  { key: 'setup', icon: 'plug' as const, title: 'Agrega un adaptador', detail: 'Una guía paso a paso para empezar.' },
+  { key: 'personalize', icon: 'heart' as const, title: 'Ponle nombre a lo cotidiano', detail: 'Identifica el aparato y su ubicación.' },
+];
+---
+<section class="demo-section" id="demo">
+  <div class="section-shell demo-grid">
+    <div class="demo-copy" data-reveal>
+      <span class="eyebrow">02 / CONOCE LA APLICACIÓN</span>
+      <h2>Tu hogar,<br/><em>de un vistazo.</em></h2>
+      <p>Explora pantallas reales de CuidaLink para Android. Consulta tu hogar y conoce cómo se registra un adaptador, desde la preparación hasta su nombre y ubicación.</p>
+      <div class="scenario-list" role="group" aria-label="Pantallas reales de la aplicación">
+        {screens.map((screen, index) => <button class:list={['scenario', {active: index === 0}]} data-screen={screen.key} aria-pressed={index === 0} aria-controls="app-screen"><span class="scenario-symbol"><Icon name={screen.icon}/></span><span><strong>{screen.title}</strong><small>{screen.detail}</small></span><Icon name="arrow" size={19}/></button>)}
+      </div>
+      <p class="demo-disclaimer"><span class="status-dot"></span> Capturas reales · CuidaLink 0.3.2 · Datos locales de prueba</p>
+      <p class="screen-description" id="screen-description" aria-live="polite">Inicio reúne el estado del hogar y te indica cuándo necesitas actualizar la información.</p>
+      <a class="text-button demo-download" href="/downloads/CuidaLink-demo.apk" download>Probar la app en Android <Icon name="download" size={17}/></a>
+    </div>
+    <figure class="phone-stage" data-reveal>
+      <div class="phone-orbit" aria-hidden="true"></div>
+      <span class="phone-caption">Así se ve en Android.</span>
+      <div class="phone phone-real"><img id="app-screen" src="/images/app-inicio.webp" alt="Captura real de Inicio de CuidaLink: Mi hogar, alertas pendientes y dispositivos conectados" width="1080" height="2400" loading="lazy" decoding="async" /></div>
+      <figcaption class="real-screen-label" id="screen-caption">01 / Inicio</figcaption>
+    </figure>
+  </div>
+</section>

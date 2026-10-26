@@ -1,0 +1,8 @@
+packages:
+  - .
+storeDir: .pnpm-store
+nodeLinker: isolated
+enableGlobalVirtualStore: false
+allowBuilds:
+  esbuild: true
+  sharp: true

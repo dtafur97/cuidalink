@@ -1,0 +1,89 @@
+---
+import '@fontsource-variable/manrope';
+import '@fontsource/instrument-serif/latin-400-italic.css';
+import '../styles/global.css';
+import Brand from '../components/Brand.astro';
+import AppDemo from '../components/AppDemo.astro';
+import Icon from '../components/Icon.astro';
+import Device from '../components/Device.astro';
+
+const questions = [
+  ['¿Qué es CuidaLink?', 'CuidaLink es un proyecto de acompañamiento para familias de adultos mayores que conservan autonomía y pasan algunos periodos sin compañía. Su propuesta utiliza el consumo eléctrico de aparatos cotidianos como señal indirecta de actividad y plantea avisos preventivos para el familiar.'],
+  ['¿Mi familiar tiene que cambiar su rutina?', 'La propuesta está pensada para integrarse a los electrodomésticos que ya utiliza. No requiere cámaras, micrófonos ni que el adulto mayor use una aplicación o recuerde realizar una acción diaria. La elección de aparatos debe corresponder a su rutina.'],
+  ['¿Una alerta significa que ocurrió una emergencia?', 'No. Una variación en el consumo puede tener distintas explicaciones. El aviso invita a llamar o visitar a tu familiar para saber qué ocurre. CuidaLink no confirma emergencias, no detecta caídas ni identifica quién utilizó el aparato.'],
+  ['¿Necesita internet para funcionar?', 'El sistema propuesto requiere electricidad, Wi-Fi y servicios remotos. Si falta comunicación, debe mostrarse que no hay información disponible. La versión Android actual funciona con datos locales de demostración y aún no está conectada al hardware ni a un servidor.'],
+  ['¿Ya puedo probar la aplicación?', 'Sí. Puedes descargar la versión de desarrollo para Android 8 o posterior al final de esta página. Permite explorar el inicio, registrar adaptadores de prueba y generar una notificación local. El monitoreo y los avisos mostrados son simulados; todavía no es una solución comercial de monitoreo remoto.'],
+];
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#193d35" />
+    <meta name="description" content="Conoce CuidaLink: una propuesta de acompañamiento familiar que convierte el uso de electrodomésticos en señales de actividad, sin cámaras ni cambios de rutina." />
+    <meta property="og:title" content="CuidaLink — La tranquilidad de sentir cerca" />
+    <meta property="og:description" content="Pequeñas señales de su día. Una nueva forma de acompañar a quienes más quieres." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>CuidaLink — La tranquilidad de sentir cerca</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-shell">
+        <Brand />
+        <nav class="desktop-nav" aria-label="Navegación principal"><a href="#como-funciona">Así funciona</a><a href="#por-que-luma">Por qué CuidaLink</a><a href="#preguntas">Preguntas frecuentes</a></nav>
+        <a class="button button-small nav-cta" href="#demo">Conoce CuidaLink <Icon name="diagonal" size={17}/></a>
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><Icon name="menu" /></button>
+      </div>
+      <nav id="mobile-menu" class="mobile-menu" aria-label="Navegación móvil" hidden><a href="#como-funciona">Así funciona</a><a href="#por-que-luma">Por qué CuidaLink</a><a href="#demo">Explorar la demo</a><a href="#preguntas">Preguntas frecuentes</a></nav>
+    </header>
+
+    <main id="contenido">
+      <section class="hero section-shell" id="inicio">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="tiny-sun">✳</span> TECNOLOGÍA QUE ACOMPAÑA</span>
+          <h1>Su vida de siempre.<br/>Tú, un poco<br/><em>más cerca.</em></h1>
+          <p class="hero-description">Hay tranquilidad en las pequeñas señales. CuidaLink transforma el uso de sus electrodomésticos en una forma de acompañar, incluso a la distancia.</p>
+          <div class="hero-actions"><a class="button" href="#como-funciona">Descubre cómo <Icon name="arrow" size={19}/></a><a class="text-button" href="#demo"><span class="play-icon"><Icon name="play" size={13}/></span> Explora la demo</a></div>
+          <div class="hero-footnote"><span class="small-line"></span><p>Para quienes cuidan.<br/><strong>Y para quienes quieren seguir siendo ellos mismos.</strong></p></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Concepto de acompañamiento CuidaLink">
+          <div class="visual-grain"></div>
+          <div class="visual-heading"><span>UNA CONEXIÓN MÁS HUMANA</span><Icon name="heart" size={18}/></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+          <div class="orbit-label orbit-label-top"><span></span> Lo cotidiano nos conecta</div>
+          <div class="hero-device"><Device /></div>
+          <div class="signal-dot signal-dot-one"></div><div class="signal-dot signal-dot-two"></div>
+          <div class="activity-toast"><span class="toast-icon"><Icon name="coffee" size={23}/></span><div><span class="toast-label">UNA PEQUEÑA SEÑAL</span><strong>El día empieza con un café.</strong><span>Actividad del aparato · ejemplo ilustrativo</span></div><span class="toast-check"><Icon name="check" size={14}/></span></div>
+          <div class="visual-bottom"><span>Pequeño en casa.<br/><strong>Grande en lo que importa.</strong></span><span class="visual-index">01 — CUIDALINK</span></div>
+          <span class="concept-label">Imagen Referencial*</span>
+        </div>
+      </section>
+
+      <div class="values-strip section-shell"><span>Más conexión.<br/><strong>Menos preocupación.</strong></span><div><Icon name="shield" size={21}/> Sin cámaras ni micrófonos</div><div><Icon name="leaf" size={21}/> Sin cambiar su rutina</div><div><Icon name="heart" size={21}/> Con su autonomía primero</div></div>
+
+      <section class="how-section section-shell section-space" id="como-funciona">
+        <div class="section-intro" data-reveal><span class="eyebrow">01 / TAN SIMPLE COMO SU DÍA A DÍA</span><div class="heading-row"><h2>Un pequeño gesto.<br/><em>Una nueva forma de estar.</em></h2><p>La tecnología hace su parte en silencio.<br/>El vínculo sigue siendo tuyo.</p></div></div>
+        <div class="steps">
+          <article class="step" data-reveal><div class="step-top"><span>01</span><Icon name="plug" size={29}/></div><h3>Conecta lo cotidiano.</h3><p>La propuesta empieza con un adaptador entre el enchufe y un aparato que tu familiar ya utiliza.</p><span class="step-tag">Su cafetera. Su lámpara. Su rutina.</span></article>
+          <article class="step" data-reveal><div class="step-top"><span>02</span><Icon name="wifi" size={29}/></div><h3>Observa las señales.</h3><p>El consumo eléctrico ofrece una señal indirecta de uso. La app está pensada para acercarte esa información.</p><span class="step-tag">La actividad del aparato, a la vista.</span></article>
+          <article class="step" data-reveal><div class="step-top"><span>03</span><Icon name="bell" size={29}/></div><h3>Encuentra un motivo para llamar.</h3><p>Un aviso preventivo te invita a comprobar cómo está tu familiar cuando algo requiere atención.</p><span class="step-tag">A veces, todo empieza con un «¿cómo estás?».</span></article>
+        </div>
+      </section>
+
+      <AppDemo />
+
+      <section class="care-section section-shell section-space" id="por-que-luma"><div class="care-art" data-reveal><div class="care-rings"></div><div class="care-flower" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><i></i></div><span class="care-art-label">CONECTADOS, SIN INVADIR.</span><p>Su espacio.<br/>Su ritmo.<br/><em>Su independencia.</em></p><Icon name="diagonal" size={34}/></div><div class="care-copy" data-reveal><span class="eyebrow">03 / CUIDAR DESDE EL RESPETO</span><h2>Estar presente.<br/><em>Dejar espacio.</em></h2><p>Acompañar a alguien también es respetar la vida que ha construido. Por eso imaginamos una tecnología que se adapta a su hogar.</p><div class="care-point"><Icon name="eye" size={23}/><div><h3>La privacidad es parte del cuidado.</h3><p>Sin imágenes ni conversaciones. La señal proviene del consumo de los aparatos.</p></div></div><div class="care-point"><Icon name="heart" size={23}/><div><h3>Su autonomía, siempre al centro.</h3><p>Sin dispositivos que deba llevar puestos ni tareas diarias que recordar.</p></div></div><div class="care-point"><Icon name="phone" size={23}/><div><h3>Un puente hacia una conversación.</h3><p>La información te orienta. Una llamada o una visita permiten comprobar lo que pasa.</p></div></div></div></section>
+
+      <section class="faq-section section-shell section-space" id="preguntas"><div class="faq-heading" data-reveal><span class="eyebrow">04 / CON TODA CLARIDAD</span><h2>Es natural<br/><em>tener preguntas.</em></h2><p>Conoce la idea, su alcance<br/>y el siguiente paso del proyecto.</p></div><div class="faq-list" data-reveal>{questions.map(([question, answer], index) => <details class="faq-item" open={index === 0}><summary>{question}<span><Icon name="plus" size={19}/></span></summary><p>{answer}</p></details>)}</div></section>
+
+      <section class="closing section-shell" id="conoce-la-app"><div class="closing-inner" data-reveal><div class="closing-sun" aria-hidden="true">✳</div><span class="eyebrow">LA TECNOLOGÍA CONECTA. TÚ ACOMPAÑAS.</span><h2>El próximo «¿cómo estás?»<br/><em>puede empezar aquí.</em></h2><p>Conoce el primer paso de CuidaLink.<br/>Explora la aplicación de demostración para Android.</p><a class="button button-lime" href="/downloads/CuidaLink-demo.apk" download>Probar la app Android <Icon name="download" size={20}/></a><span class="download-note">Versión de desarrollo · Android 8+ · Datos locales simulados</span><div class="closing-line"></div></div></section>
+    </main>
+
+    <footer class="site-footer section-shell"><div class="footer-top"><Brand small/><p>Pequeñas señales.<br/>Vínculos que importan.</p><a href="#inicio">Volver arriba <Icon name="diagonal" size={17}/></a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} CuidaLink · Proyecto en desarrollo.</span><span>Hecho para acompañar, con respeto.</span></div><p class="scope-note">CuidaLink utiliza el consumo eléctrico como señal indirecta de actividad. No confirma bienestar o emergencias, no detecta caídas ni identifica a la persona que usa un aparato. La integración remota del sistema está en desarrollo.</p></footer>
+    <script src="../scripts/main.ts"></script>
+  </body>
+</html>
